@@ -789,11 +789,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUpItems
   pickUp: {fileID: 0}
---- !u!1 &189972925 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6b060a19dcbf0c44cbb73a34f93d73a0, type: 3}
-  m_PrefabInstance: {fileID: 1114769637}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &198580382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c7e0b6e202efea488e5e81c5482e403, type: 3}
@@ -4867,29 +4862,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6b060a19dcbf0c44cbb73a34f93d73a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 387654820}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6b060a19dcbf0c44cbb73a34f93d73a0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1114769640}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b060a19dcbf0c44cbb73a34f93d73a0, type: 3}
 --- !u!4 &1114769638 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6b060a19dcbf0c44cbb73a34f93d73a0, type: 3}
   m_PrefabInstance: {fileID: 1114769637}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1114769640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 189972925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c21bbdd0bffc724d844d319942d56ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  pickUp: {fileID: 0}
 --- !u!1 &1119798957 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3722873298629575598, guid: 79b79305aca74524ca82fda74e8f0e25, type: 3}
