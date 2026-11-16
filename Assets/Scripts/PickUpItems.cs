@@ -1,14 +1,22 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PickUpItems : MonoBehaviour
 {
 
-    public InputActionReference pickUp; 
+    public InputActionReference pickUp;
+
+    private bool trigger = false;
+
+    private Transform item; 
+
+
+
+
 
     void Start()
     {
-     
     }
 
     void OnEnable()
@@ -23,13 +31,44 @@ public class PickUpItems : MonoBehaviour
 
     void PickUpPressed(InputAction.CallbackContext obj)
     {
-        Debug.Log("Q pressed"); 
+        //run when Q is pressed - key for picking up items
+
+        Debug.Log("Q PRESSED"); 
+
+        if (trigger)
+        {
+            //hide item if player is within range
+            HideItem(); 
+        }
     }
 
-
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "Item")
+        {
+            //get the parent object of the trigger zone - the game object
+            item = other.gameObject.transform.parent;
+
+            //only pick up item if player is within trigger zone
+            trigger = true;
+            Debug.Log("Pick up? \n");
+        }
+        
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        trigger = false;
+    }
+
+    void HideItem()
+    {
+        //item.GetComponent<MeshRenderer>().enabled = false;
+
+        Debug.Log("You picked up an item.");
+        item.gameObject.SetActive(false);
 
     }
+
 
 }
