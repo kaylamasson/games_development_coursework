@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PickUpItems : MonoBehaviour
 {
@@ -11,12 +12,13 @@ public class PickUpItems : MonoBehaviour
 
     private Transform item; 
 
-
+    public GameObject pickUpTextPanel;
 
 
 
     void Start()
     {
+        pickUpTextPanel.SetActive(false); 
     }
 
     void OnEnable()
@@ -33,7 +35,6 @@ public class PickUpItems : MonoBehaviour
     {
         //run when Q is pressed - key for picking up items
 
-        Debug.Log("Q PRESSED"); 
 
         if (trigger)
         {
@@ -46,6 +47,8 @@ public class PickUpItems : MonoBehaviour
     {
         if (other.tag == "Item")
         {
+            ShowPanel(); 
+
             //get the parent object of the trigger zone - the game object
             item = other.gameObject.transform.parent;
 
@@ -58,6 +61,8 @@ public class PickUpItems : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
+        HidePanel();
+
         trigger = false;
     }
 
@@ -66,9 +71,23 @@ public class PickUpItems : MonoBehaviour
         //item.GetComponent<MeshRenderer>().enabled = false;
 
         Debug.Log("You picked up an item.");
+
         item.gameObject.SetActive(false);
+
+        trigger = false;
+
+        HidePanel(); 
 
     }
 
+    void ShowPanel()
+    {
+        pickUpTextPanel.SetActive(true);
+    }
+
+    void HidePanel()
+    {
+        pickUpTextPanel.SetActive(false);
+    }
 
 }

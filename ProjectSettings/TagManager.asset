@@ -7,6 +7,8 @@ TagManager:
   - CinemachineTarget
   - Rocket Part
   - Mushroom
+  - Item
+  - Note
   layers:
   - Default
   - TransparentFX
