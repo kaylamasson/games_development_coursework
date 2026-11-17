@@ -5,74 +5,105 @@ using UnityEngine;
 public class MushroomSequence : MonoBehaviour
 {
     bool sequenceComplete; 
-    bool[] mushroomSequence = new bool[3];
+    // bool[] mushroomSequence = new bool[5];
 
+    //string[] answerSequence = new string[5]{"green", "red", "green", "blue", "red"};
  
+    private int mushroomCounter = 1; 
 
     void Start()
     {
-        sequenceComplete = false;
+        // sequenceComplete = false;
 
-        for (int i=0; i<mushroomSequence.Length; i++)
+        // for (int i=0; i<mushroomSequence.Length; i++)
+        // {
+        //     mushroomSequence[i] = false;
+        // }
+    }
+
+    void Update()
+    {
+        Debug.Log(mushroomCounter); 
+
+        if (mushroomCounter > 5)
         {
-            mushroomSequence[i] = false;
+            SequenceComplete(); 
         }
     }
 
 
     void OnControllerColliderHit(ControllerColliderHit collision)
     {
-        Debug.Log("collision detected");
         
-        if ((collision.gameObject.tag == "Mushroom") && (collision.gameObject.name.Contains("green")))
-        {
-            mushroomSequence[0] = true; 
-            Debug.Log("GREEN");
-        } 
+        // if ((collision.gameObject.tag == "Mushroom") && (collision.gameObject.name.Contains("green")))
+        // {
+        //     mushroomSequence[0] = true; 
+        //     Debug.Log("GREEN");
+        // } 
 
-        if ((collision.gameObject.tag == "Mushroom") && (collision.gameObject.name.Contains("red")))
-        {
-            mushroomSequence[1] = true; 
-            Debug.Log("RED"); 
-        }
+        // if ((collision.gameObject.tag == "Mushroom") && (collision.gameObject.name.Contains("red")))
+        // {
+        //     mushroomSequence[1] = true; 
+        //     Debug.Log("RED"); 
+        // }
                 
-        if ((collision.gameObject.tag == "Mushroom") && (collision.gameObject.name.Contains("blue")))
+        // if ((collision.gameObject.tag == "Mushroom") && (collision.gameObject.name.Contains("blue")))
+        // {
+        //     mushroomSequence[2] = true; 
+        //     Debug.Log("BLUE"); 
+
+        //     CheckIfComplete();
+        // }
+
+        if (collision.gameObject.tag == "Mushroom")
         {
-            mushroomSequence[2] = true; 
-            Debug.Log("BLUE"); 
+            if (collision.gameObject.name.Contains(mushroomCounter.ToString()))
+            {
+                // mushroomSequence[mushroomCounter] = true; 
 
-            CheckIfComplete();
-        }
+                Debug.Log("correct " + mushroomCounter); 
 
+                mushroomCounter ++; 
+
+            }
+            // else
+            // {
+            //     mushroomCounter = 1; 
+
+            //     Debug.Log("Not quite..."); 
+            // }
+        }    
             
     }
 
+    
       
     
 
-    void CheckIfComplete()
-    {
-        if (sequenceComplete == false)
-        {
-            for (int i=0; i<mushroomSequence.Length; i++)
-            {
-                if (mushroomSequence[i] == false)
-                {
-                    break; 
-                }
+    // void CheckIfComplete()
+    // {
+    //     if (sequenceComplete == false)
+    //     {
+    //         for (int i=0; i<mushroomSequence.Length; i++)
+    //         {
+    //             if (mushroomSequence[i] == false)
+    //             {
+    //                 break; 
+    //             }
 
 
-                sequenceComplete = true;
+    //             sequenceComplete = true;
 
-                SequenceComplete();
-            }
-        }
+    //             SequenceComplete();
+    //         }
+    //     }
         
-    }
+    // }
 
     void SequenceComplete()
     {
         Debug.Log("Oh! Looks like that did something...");
+
         //reveal missing piece 
         
     }
