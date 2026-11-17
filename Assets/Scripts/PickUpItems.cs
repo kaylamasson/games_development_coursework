@@ -14,11 +14,22 @@ public class PickUpItems : MonoBehaviour
 
     public GameObject pickUpTextPanel;
 
+    public GrabObject grabObject; 
+
+    public Transform objectGrabPointTransform; 
+
+    private bool holdingItem;
+
+    
+
 
 
     void Start()
     {
         pickUpTextPanel.SetActive(false); 
+
+        holdingItem = false; 
+
     }
 
     void OnEnable()
@@ -35,12 +46,32 @@ public class PickUpItems : MonoBehaviour
     {
         //run when Q is pressed - key for picking up items
 
+        
+        
 
-        if (trigger)
+        if (!holdingItem)
         {
-            //hide item if player is within range
-            HideItem(); 
+
+            if (trigger)
+            {
+                grabObject = item.GetComponent<GrabObject>(); 
+                grabObject.Grab(objectGrabPointTransform);
+                holdingItem = true;
+            }
+ 
+        } else
+        {
+            grabObject.Drop();
+            holdingItem = false;  
         }
+        
+
+            //hide item if player is within range
+            //HideItem(); 
+
+        
+    
+        
     }
 
     void OnTriggerEnter(Collider other)

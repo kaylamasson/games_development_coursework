@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class MushroomSequence : MonoBehaviour
 {
-    bool sequenceComplete; 
+    private bool sequenceComplete; 
+
+    public GameObject rocketPart;
+
     // bool[] mushroomSequence = new bool[5];
 
     //string[] answerSequence = new string[5]{"green", "red", "green", "blue", "red"};
@@ -13,7 +16,9 @@ public class MushroomSequence : MonoBehaviour
 
     void Start()
     {
-        // sequenceComplete = false;
+        sequenceComplete = false;
+
+        rocketPart.SetActive(false); 
 
         // for (int i=0; i<mushroomSequence.Length; i++)
         // {
@@ -61,7 +66,7 @@ public class MushroomSequence : MonoBehaviour
             {
                 // mushroomSequence[mushroomCounter] = true; 
 
-                Debug.Log("correct " + mushroomCounter); 
+                //Debug.Log("correct " + mushroomCounter); 
 
                 mushroomCounter ++; 
 
@@ -103,6 +108,10 @@ public class MushroomSequence : MonoBehaviour
     void SequenceComplete()
     {
         Debug.Log("Oh! Looks like that did something...");
+
+        rocketPart.SetActive(true); 
+
+
 
         //reveal missing piece 
         
