@@ -246,6 +246,35 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UI",
+            "id": "f6af3ad5-8bfd-4bad-b047-1c640d18f0e9",
+            "actions": [
+                {
+                    "name": "Mini Map",
+                    "type": "Button",
+                    "id": "d33b3b24-42be-4dfc-b469-c82ab65d4e00",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "afc5a01f-b6f0-4874-b12e-6d36e9321a62",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";KeyboardMouse",
+                    "action": "Mini Map",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
