@@ -28,7 +28,7 @@ public class MushroomSequence : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(mushroomCounter); 
+        //Debug.Log(mushroomCounter); 
 
         if (mushroomCounter > 5)
         {

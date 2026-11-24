@@ -20,16 +20,16 @@ public class GameState : MonoBehaviour
     void ToggleMiniMap()
     {
         
-        Debug.Log("tab pressed"); 
+        //Debug.Log("tab pressed"); 
         if (miniMap.enabled == true)
         {
             miniMap.enabled = false;
-            Debug.Log("map hidden");
+            //Debug.Log("map hidden");
 
         } else
         {
             miniMap.enabled = true;
-            Debug.Log("map shown");
+            //Debug.Log("map shown");
 
         }
     }
